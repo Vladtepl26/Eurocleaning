@@ -1,7 +1,24 @@
 document.addEventListener("DOMContentLoaded", () => {
+	$('.hamburger').on('click', function() {
+
+		if ($(this).hasClass('is-active')) {
+			$(this).removeClass('is-active');
+			$('.header-mobile-wrap').slideUp(500);
+		}
+		else {
+			$(this).addClass('is-active');
+			$('.header-mobile-wrap').slideDown(500);
+		}
+
+		
+
+	});
+
+
 	const bannerSwiper = new Swiper(".banner-swiper", {
 		speed: 1000,
 		spaceBetween: 0,
+		autoHeight: true,
 		navigation: {
 			nextEl: ".banner-swiper .swiper-button-next",
 			prevEl: ".banner-swiper .swiper-button-prev",
